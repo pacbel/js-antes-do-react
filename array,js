@@ -1,0 +1,50 @@
+//Métodos de array
+const array = [1,2,3,4,5];
+
+for (const i of array){
+    //document.body.innerText += i;
+}
+
+array.forEach(item => {
+    //document.body.innerText += item;
+});
+
+const novoArray = array.map(item => {
+     return item * 2;
+});
+//document.body.innerText += JSON.stringify(novoArray);
+
+const novoArrayPar = array.map(item => {
+    if (item % 2 === 0 ){
+        return item * 10;
+    }
+    return item;
+});
+//document.body.innerText = JSON.stringify(novoArrayPar);
+
+const arrayFiltrado = array
+                            .filter(item => item % 2 !== 0)
+                            .map(item => item * 2);
+
+//document.body.innerText = JSON.stringify(arrayFiltrado);
+
+//every - Devolve true se a condição de teste do array for atendida
+const array2 = [1,2,3,4,5, 'a'];
+const todosItensSaoNumeros = array2.every(item => typeof item === 'number');
+//document.body.innerText = JSON.stringify(todosItensSaoNumeros);
+
+//some - Devolve se pelo menos um item satisfaz a condição
+const array3 = [1,2,3,4,5, 'a'];
+const peloMenosUmItem = array3.some(item => typeof item !== 'number');
+//document.body.innerText = JSON.stringify(peloMenosUmItem);
+
+//find - retorna o primeiro que satisfaz a condição
+//findIndex - retorna o índice do item encontrado
+//document.body.innerText = array.find(item => item % 2 === 0 );
+
+//reduce
+const soma = array.reduce((acc, item) => {
+    document.body.innerText += acc + ',' + item + '---'
+    return acc + item;
+}, 0)
+document.body.innerText += soma;
